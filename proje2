@@ -1,0 +1,11 @@
+def ic_ice_list_tersdondur(liste):
+    if liste == []:
+        return []
+    else:
+        if type(liste[-1]) == list:
+            return ([ic_ice_list_tersdondur(liste[-1])]
+                   + ic_ice_list_tersdondur(liste[:-1]))
+        else:
+            return [liste[-1]] + ic_ice_list_tersdondur(liste[:-1])
+            
+            #print(ic_ice_list_tersdondur([[1, 2], [3, 4], [5, 6, 7]])) 
